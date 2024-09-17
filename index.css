@@ -15,7 +15,7 @@ body {
 .container {
   margin: 0 auto;
   width: 850px;
-  transform: rotateX(50deg);
+  transform: rotateX(30deg);
   perspective: 800px;
 }
 
@@ -85,30 +85,58 @@ table td.le {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
-  transform: rotateX(-40deg);
+  transform: rotateX(-20deg);
+  overflow-y: auto;
+  max-height: 200px;
+  position: fixed;
+  bottom: 200; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+@keyframes spin-slow {
+  from {
+      transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(-3600deg);
-  }
-  70% {
-    transform: rotate(-1700deg);
-  }
-  80% {
-    transform: rotate(-800deg);
-  }
-  90% {
-    transform: rotate(-100deg);
-  }
-  100% {
-    transform: rotate(0deg);
+  to {
+      transform: rotate(3600deg);
   }
 }
+
+.kerek {
+  animation: spin-slow 10s cubic-bezier(0.33, 0, 0.67, 1) forwards; 
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translate(50px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) translate(50px) rotate(360deg);
+  }
+}
+
+.ball {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white; 
+  border-radius: 50%;
+  top: 31%;
+  left: 17.5%;
+  z-index: 1;
+}
+
+
 
 #ures{
   box-shadow: none;
+}
+
+#tete{
+  font-size: 18px;
+}
+
+.ro {
+  height: 250px;
 }
