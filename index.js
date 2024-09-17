@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             kerek.style.animation = 'none';
             void kerek.offsetWidth;
-            vissza = 20;
+            vissza = 10;
             fogadasok = [];
             alert("A nyerő szám: " + nyeroSzam + ". A nyereményed: " + nyeremeny);
             szamolas()
