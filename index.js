@@ -138,18 +138,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let tete = document.getElementById('tete');
     let vissza = 5;
     const ball = document.querySelector('.ball');
-    const radius = 60;
     let angle = 0;
-
-    let moveDuration = 10000;
 
     function moveBall() {
         const kezdes = Date.now();
         function animacio() {
             const elapsed = Date.now() - kezdes;
-            if (elapsed < moveDuration) { 
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
+            if (elapsed < 11000) { 
+                const x = Math.cos(-angle) * 60;
+                const y = Math.sin(-angle) * 60;
                 ball.style.left = `calc(17.5% + ${x}px)`;
                 ball.style.top = `calc(31% + ${y}px)`;
                 angle += 0.05;
@@ -197,6 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tete.innerHTML = ``;
             szamolas();
             alert("A nyerő szám: " + nyeroSzam + ". A nyereményed: " + nyeremeny);
-        }, 10000);
+        }, 11000);
     }    
 });
